@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/new.css')}}">
+    <title>Nouvelle connaissance</title>
+</head>
+<body>
+
+    <!-- Back to menu button -->
+    <a href="{{ url_for('menu') }}" class="back-to-menu">↩️</a>
+
+    <div class="main-container">
+
+        <h1>Nouvelle connaissance</h1>
+
+        <div class="form-container">
+
+                <form action="{{url_for('dataProcessing')}}" method="POST">
+
+                    <textarea type="text" name="newData" id="newData" required></textarea>
+
+                    <div class="interact-container">
+                        <div class="confirm-button">
+                            <input type="submit" value="Créer la connaissance">
+                        </div>
+                    </div>
+
+                </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

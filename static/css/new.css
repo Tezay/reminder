@@ -1,0 +1,52 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* Ajout de padding pour un peu d'espace sur les bords */
+}
+
+.form-container {
+    padding: 10px 30px;
+}
+
+#newData {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em
+}
+
+
+
+/* Styles pour le bouton confirm-button */
+.confirm-button {
+    width: calc(100% - 40px); /* Garder des petits espaces à gauche et à droite */
+    max-width: 500px; /* Optionnel: limiter la largeur maximale pour des écrans plus larges */
+}
+
+
+.confirm-button input {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3em; /* Augmenter la taille de la police */
+    color: white;
+    background-color: #7B61FF; /* Couleur violette principale */
+    border: none;
+    font-weight: bold;
+    border-radius: 25px; /* Bordures arrondies */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Légère ombre pour effet de profondeur */
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; /* Pointeur pour indiquer que c'est un bouton */
+}
+
+.confirm-button input:hover {
+    background-color: #6848e3; /* Couleur violette foncée pour effet de survol */
+    transform: scale(1.03);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmentation de l'ombre au survol */
+}
+
+.confirm-button input:active {
+    background-color: #4a34b2; /* Couleur encore plus foncée pour effet de clic */
+    transform: scale(0.95);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* Diminution de l'ombre au clic */
+}

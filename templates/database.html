@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}">
+    <title>Data list</title>
+</head>
+
+<body>
+
+    <!-- Back to menu button -->
+    <a href="{{ url_for('menu') }}" class="back-to-menu">↩️</a>
+
+    <div class="main-container">
+
+        <h1>Bibliothèque</h1>
+
+        {% if dataList|length == 0 %}
+        <h2>Aucune information enregistrée pour le moment.</h2>
+
+        {% else %}
+
+            <ul class="dataList-container">
+
+                {% for data in dataList %}
+                
+                <li class="data-container">
+                    <div class="data-left">
+                        <span class="span-question">{{ data[0] }}</span>
+                        <span class="span-answer">{{ data[1] }}</span>
+                    </div>
+                    <div class="data-right">
+                        <span>{{ data[3] }}❇️</span>
+                    </div>
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

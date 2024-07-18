@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/reviewer.css')}}">
+    <script defer="defer" language="JavaScript" src="{{url_for('static', filename='js/reviewer.js')}}"></script>
+    <title>Mode révision</title>
+</head>
+
+<body>
+    
+    <!-- Back to menu button -->
+    <a href="{{ url_for('menu') }}" class="back-to-menu">↩️</a>
+
+    <div class="main-container">
+
+        <h1>Mode révision</h1>
+
+        {% if question != None %}
+
+            <div class="question-container" id="question-container">
+
+                <span>
+                    {{question['question']}}
+                </span>
+
+
+            </div>
+
+
+            <div class="answer-container" id="answer-container">
+
+                <p> {{question['answer']}} </p>
+
+            </div>
+
+            <div class="interact-container">
+
+                <div class="submit-container" id="submit-container">
+                    <button class="submit-button" id="submit-button">
+                        <span class="button-content">Voir la réponse</span>
+                    </button>
+                </div>
+
+                <div class="review-container" id="review-container"s>
+                    <h2>Connaissance apprise ?</h2>
+                    <div class="button-grid">
+                        <form action="{{ url_for('reviewer') }}" method="post">
+                            <button class="submit-button" type="submit" name="client_response" value="true">Oui !</button>
+                            <button class="submit-button" type="submit" name="client_response" value="false">Non, revoir prochainement</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+        {% else %}
+
+        <h2>Aucune connaissance à réviser aujourd'hui</h2>
+
+        {% endif %}
+        
+    </div>
+
+</body>
+
+</html>

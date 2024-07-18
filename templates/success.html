@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
+    <title>Connaissance enregistrée</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <h1>La connaissance a été enregistrée !</h1>
+
+        <div class="newData-container">
+            <div class="mode"><a href="{{url_for('new')}}">Créer à nouveau une connaissance</a></div>
+        </div>
+
+        <div class="reviewer-container">
+            <div class="mode"><a href="{{url_for('reviewer')}}">Commencer à réviser</a></div>
+        </div>
+
+        <div class="database-container">
+            <div class="mode"><a href="{{url_for('database')}}">Bibliothèque des connaissances</a></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

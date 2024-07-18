@@ -1,0 +1,12 @@
+# Environnements virtuels
+.venv/
+env/
+venv/
+
+# Compiled files
+__pycache__/
+*.pyc
+
+# Configurations de l'éditeur
+.vscode/
+.idea/

@@ -1,0 +1,64 @@
+/* Styles généraux */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Couleur de fond neutre */
+    font-size: 1em
+}
+
+
+/* Centrer les gros titres des pages */
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+
+/* CSS bouton back to menu */
+
+.back-to-menu {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    font-size: 2em;
+    text-decoration: none;
+    border-radius: 50%;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.back-to-menu:hover {
+    transform: scale(1.1);
+}
+
+.back-to-menu:active {
+    transform: scale(0.9);
+}
+
+
+.interact-container {
+    position: fixed;
+    display: flex;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    bottom: env(safe-area-inset-bottom); /* Pour afficher interact-container avec le clavier ouvert */
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #edebeb, #e4e0e0);
+}
