@@ -10,3 +10,6 @@ __pycache__/
 # Configurations de l'éditeur
 .vscode/
 .idea/
+
+#Data file
+data.csv
