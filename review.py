@@ -8,7 +8,7 @@ delayedData = []
 # Vérifie si le fichier "DelayeddDta.csv" existe
 if not os.path.exists("delayedData.csv"):
     # Crée un nouveau fichier "DelayedData.csv"
-    with open("DelayedData.csv", mode="w", newline="", encoding='utf-8') as file:
+    with open("delayedData.csv", mode="w", newline="", encoding='utf-8') as file:
         writer = csv.writer(file)
         #writer.writerow(["id"])
     print("delayedData.csv file created.")
