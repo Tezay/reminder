@@ -11,6 +11,10 @@ __pycache__/
 .vscode/
 .idea/
 
+#API key
+
+config.py
+
 #Data file
 data.csv
 delayedData.csv

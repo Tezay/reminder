@@ -4,13 +4,13 @@ import hashlib
 from datetime import datetime
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
+from config import API_KEY
 
 promptSystem = "Tu es un assistant qui a pour unique but de synthétiser des informations sous forme de question-réponse, de sorte à pouvoir tester la connaissance. Pour chaque information donnée par l'utilisateur, répondre simplement \"Question : ...\" et \"Réponse : ...\". La réponse doit être la plus simple possible, il n'est pas nécessaire de reforumler la question."
 
-api_key = "Rsmot49jgIroCvOGhT6zwHgnJt6qqShc"
 model = "mistral-large-latest"
 
-client = MistralClient(api_key=api_key)
+client = MistralClient(api_key=API_KEY)
 
 
 #Génère une ID aléatoire en fonction de time
