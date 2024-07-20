@@ -20,6 +20,6 @@
    ```sh
    python3 app.py
 
-2. Se connecter à l'adresse :
+2. Se connecter en local sur le port 5000 (Flask) :
    ```sh
    http://127.0.0.1:5000
