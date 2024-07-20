@@ -69,10 +69,63 @@
 
 
 
-/* Grid button */
+.review-container h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
 
-.grid-button{
+
+
+/* Styles pour les boutons dans review-container */
+.review-container .button-grid {
     display: flex;
-    align-items: center;
-    width: 70%;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.submit-button {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 22px; /* Bordures arrondies */
+    cursor: pointer; /* Pointeur pour indiquer que c'est un bouton */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet de profondeur */
+}
+
+.yes-button {
+    background-color: #4CAF50; /* Vert pour le bouton "Oui" */
+}
+
+.yes-button:hover {
+    background-color: #45a049; /* Couleur plus foncée pour le survol */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmentation de l'ombre au survol */
+}
+
+.yes-button:active {
+    background-color: #388E3C; /* Couleur encore plus foncée pour le clic */
+    transform: scale(0.95);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* Diminution de l'ombre au clic */
+}
+
+.no-button {
+    background-color: #F44336; /* Rouge pour le bouton "Non" */
+}
+
+.no-button:hover {
+    background-color: #e53935; /* Couleur plus foncée pour le survol */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmentation de l'ombre au survol */
+}
+
+.no-button:active {
+    background-color: #d32f2f; /* Couleur encore plus foncée pour le clic */
+    transform: scale(0.95);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* Diminution de l'ombre au clic */
 }
