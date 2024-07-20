@@ -129,14 +129,14 @@ def edit_level(isLearned, id):
             df.at[index[0], 'level'] += 1
             print("Level increased")
 
-            #Retire l'ID de la liste
-            remove_question_id(id)
         else:
             # Réinitialiser le niveau à 0 si isLearned est False
             df.at[index[0], 'level'] = 0
 
             print("Level and reset")
 
+        #Retire l'ID de la liste
+        remove_question_id(id)
 
         # Mettre à jour la date
         df.at[index[0], 'date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
