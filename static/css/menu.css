@@ -44,14 +44,17 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        gap: 30px;
     }
 
     .mode {
-        margin: 10px;
         flex: 1;
     }
 
     .mode a {
-        height: 150px;
+        padding: 30px 40px;
+        font-size: 1.3em;
+        border-radius: 30px; /* Bordures arrondies */
     }
+
 }
