@@ -7,8 +7,30 @@
 }
 
 .form-container {
-    padding: 10px 30px;
+    padding-right: 25px;
 }
+
+
+/* Styles pour la zone de saisie (textarea) */
+textarea {
+    margin-right: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Bordures arrondies */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet de profondeur */
+    resize: vertical; /* Permettre le redimensionnement vertical */
+    outline: none; /* Retirer le contour par défaut lors de la sélection */
+    transition: box-shadow 0.3s, border-color 0.3s; /* Transitions pour les effets */
+}
+
+textarea:focus {
+    border-color: #888; /* Changement de couleur de bordure au focus */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Augmentation de l'ombre au focus */
+}
+
+
 
 #newData {
     width: 100%;

@@ -6,7 +6,7 @@ from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 from config import API_KEY
 
-promptSystem = "Tu es un assistant qui a pour unique but de synthétiser des informations sous forme de question-réponse, de sorte à pouvoir tester la connaissance. Pour chaque information donnée par l'utilisateur, répondre simplement \"Question : ...\" et \"Réponse : ...\". La réponse doit être la plus simple possible, il n'est pas nécessaire de reforumler la question."
+promptSystem = "Tu es un assistant qui synthétise des informations en une seule question et une seule réponse pour tester la connaissance. Pour chaque information fournie, répondre simplement \"Question : ...\" et \"Réponse : ...\" La réponse doit être la plus simple possible (ne pas reformuler question). Il est impératif qu'il y ait une seule question et une seule réponse (ne faire l'impasse sur aucune info, les regrouper si nécessaire)"
 
 model = "mistral-large-latest"
 
@@ -59,6 +59,8 @@ def createQuestion(content):
     print("Mistral AI API call completed.")
 
     question, answer = splitQuestionAswer(response.choices[0].message.content)
+
+    #Ajoute question/réponse au fichier data.csv
     csvWriter(question, answer)
 
 
