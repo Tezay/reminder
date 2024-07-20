@@ -100,6 +100,7 @@
 
 .yes-button {
     background-color: #4CAF50; /* Vert pour le bouton "Oui" */
+    margin-right: 10px; /* Espace entre les deux boutons */
 }
 
 .yes-button:hover {
