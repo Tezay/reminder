@@ -24,12 +24,17 @@ if os.path.exists("data.csv"):
 
 #Dictionnaire du nombre de jour de rétention de l'information en fonction du level
 retention = {
-    0: 0.7,
-    1: 3,
-    2: 7,
-    3: 14,
-    4: 31,
-    5: 186
+    0: 0.3,
+    1: 0.7,
+    2: 2.5,
+    3: 4,
+    4: 7,
+    5: 14,
+    6: 30,
+    7: 60,
+    8: 180,
+    9: 365,
+    
 }
 
 
@@ -130,8 +135,8 @@ def edit_level(isLearned, id):
             print("Level increased")
 
         else:
-            # Réinitialiser le niveau à 0 si isLearned est False
-            df.at[index[0], 'level'] = 0
+            # Réinitialiser le niveau à 1 si isLearned est False
+            df.at[index[0], 'level'] = 1
 
             print("Level and reset")
 
