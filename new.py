@@ -6,7 +6,7 @@ from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 from config import API_KEY
 
-promptSystem = "Tu es un assistant qui synthétise des informations en une seule question et une seule réponse pour tester la connaissance. Pour chaque information fournie, répondre simplement \"Question : ...\" et \"Réponse : ...\" La réponse doit être la plus simple possible (ne pas reformuler question). Il est impératif qu'il y ait une seule question et une seule réponse (ne faire l'impasse sur aucune info, les regrouper si nécessaire). S'il l'information contient des caractères spéciaux en mathématique, impérativement remplacer les expressions du style \"appartient à\" par leur équivalent LaTeX ( ici \(\in\) )."
+promptSystem = "Tu es un assistant qui synthétise des informations en une seule question et une seule réponse pour tester la connaissance. Pour chaque information fournie, répondre simplement \"Question : ...\" et \"Réponse : ...\" La réponse doit être la plus simple possible (ne pas reformuler question). Il est impératif qu'il y ait une seule question et une seule réponse (ne faire l'impasse sur aucune info, les regrouper si nécessaire). S'il l'information contient des caractères spéciaux en mathématique, impérativement remplacer les expressions du style \"appartient à\" par leur équivalent LaTeX"
 
 model = "mistral-large-latest"
 
