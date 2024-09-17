@@ -25,6 +25,9 @@ h2 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
 
 /* CSS bouton back to menu */
 

@@ -116,11 +116,60 @@ def database():
             
             # Lire chaque ligne du fichier CSV
             for row in reader:
-                # Ajouter la ligne au tableau
-                data.append([row[0], row[1], row[2], row[3]])
+                # Ajouter la ligne au tableau (row 4 : ID)
+                data.append([row[0], row[1], row[2], row[3], row[4]])
 
     return render_template("database.html", dataList=data)
 
+
+
+#Route pour accéder à la page détaillée d'une information
+@app.route("/database/<info_id>")
+def info_route(info_id):
+
+    info = []
+
+    if os.path.exists("data.csv"):
+    
+        with open('data.csv', newline='') as csvfile:
+        # Créer un lecteur CSV
+            reader = csv.reader(csvfile)
+        
+            # Ignorer la première ligne (les en-têtes)
+            next(reader)
+            # Lire chaque ligne du fichier CSV
+            for row in reader:
+                if row[4] == info_id:
+                    # Affecte la ligne au tableau info (row 4 : ID)
+                    info.append([row[0], row[1], row[2], row[3], row[4]])
+                    print(info)
+                else:
+                    pass
+    
+        return render_template("information.html", theInfo=info)
+
+
+#Route pour supprimer une connaissance
+@app.route("/deleteprocessing/<info_id>", methods=["POST", "GET"])
+#Fonction pour supprimer l'ID d'une question dans delayedData.csv
+def deleteprocessing(info_id):
+
+    temp_filename = 'tempp.csv'
+    
+    with open("data.csv", newline='') as csvfile, open(temp_filename, 'w', newline='') as temp_csvfile:
+        reader = csv.reader(csvfile)
+        writer = csv.writer(temp_csvfile)
+        
+        #Vérifie si chaque row n'est pas l'ID à remove
+        for row in reader:
+            if row and row[4] != info_id:
+                writer.writerow(row)
+    
+    # Remplacer le fichier original par le fichier temporaire
+    os.replace(temp_filename, "data.csv")
+    print(f"ID '{info_id}' has been removed if it existed.")
+
+    return redirect(url_for('menu'))
 
 if __name__ == "__main__":
     app.run(debug=True)

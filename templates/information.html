@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/global.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/database.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/information.css')}}">
     <link rel="shortcut icon" href="{{url_for('static', filename='assets/favicon.png')}}">
 
     <!-- Ensures LaTeX compatibility -->
@@ -22,7 +22,7 @@
     <script type="text/javascript" id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <title>Data list</title>
+    <title>{{theInfo[4]}}</title>
 </head>
 
 <body>
@@ -32,32 +32,34 @@
 
     <div class="main-container">
 
-        <h1>Bibliothèque</h1>
+        <h1>Information</h1>
 
-        {% if dataList|length == 0 %}
-        <h2>Aucune information enregistrée pour le moment.</h2>
+        {% if theInfo|length == 0 %}
+        <h2>Erreur, aucune information trouvée.</h2>
 
         {% else %}
 
-            <ul class="dataList-container">
+        <div class="dataList-container">
 
-                {% for data in dataList %}
+                {% for data in theInfo %}
                 
-                <a href="{{ url_for('info_route', info_id=data[4]) }}">
-                    <li class="data-container">
-                        <div class="data-left">
-                            <span class="span-question">{{ data[0] }}</span>
-                            <span class="span-answer">{{ data[1] }}</span>
-                        </div>
-                        <div class="data-right">
-                            <span>{{ data[3] }}❇️</span>
-                        </div>
-                    </li>
-                </a>
+                <div class="data-container">
+                    <div class="data-left">
+                        <span class="span-question">{{ data[0] }}</span>
+                        <span class="span-answer">{{ data[1] }}</span>
+                    </div>
+                    <div class="data-right">
+                        <span>{{ data[3] }}❇️</span>
+                    </div>
+                </div>
+
+                <div class="delete-button-container">
+                    <a href="{{url_for('deleteprocessing', info_id=data[4])}}"><div class="delete-button">Supprimer la connaissance 🧹</div></a>
+                </div>
 
                 {% endfor %}
-
-            </ul>
+            
+        </div>
 
         {% endif %}
 

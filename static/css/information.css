@@ -1,0 +1,92 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* Ajout de padding pour un peu d'espace sur les bords */
+}
+
+
+.dataList-container {
+    padding: 0;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+@media (min-width: 1000px) {
+    .dataList-container {
+        margin: 0 auto; /* Centre horizontalement */
+    }
+}
+
+
+.data-container {
+    display: flex;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-radius: 24px;
+    cursor: pointer;
+    justify-content: space-between;
+    background-color: #ebe9e9;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.10);
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.data-container:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+.data-left {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.data-container .span-question {
+    font-weight: bold;
+    color: #7C80FC;
+}
+
+.data-container .span-answer {
+    color: #ABA0F9;
+}
+
+.data-right {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+
+
+/* Style bouton supprimer */
+
+.delete-button {
+    background-color: transparent;
+    border: 3px solid #F44336;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    color:#F44336;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 22px; /* Bordures arrondies */
+    cursor: pointer; /* Pointeur pour indiquer que c'est un bouton */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet de profondeur */
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Couleur plus foncée pour le survol */
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Augmentation de l'ombre au survol */
+}
+
+.delete-button:active {
+    background-color: #d32f2f; /* Couleur encore plus foncée pour le clic */
+    color: white;
+    transform: scale(0.8);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* Diminution de l'ombre au clic */
+}

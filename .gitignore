@@ -19,3 +19,5 @@ config.py
 data.csv
 delayedData.csv
 exemple.txt
+
+backupData.csv
