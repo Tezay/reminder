@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/error.css')}}">
     <link rel="shortcut icon" href="{{url_for('static', filename='assets/favicon.png')}}">
-    <title>Reminder - 403</title>
+    <title>Reminder - 404</title>
 </head>
 
 <body>
 
     <div class="main-container">
 
-    <h1>403</h1>
-    <p>Accès refusé. Vous n'avez pas les autorisations nécessaires pour accéder à cette page.</p>
+    <h1>404</h1>
+    <p>Aucune page n'a été trouvée.</p>
     <img src="{{ url_for('static', filename='assets/favicon.png') }}" alt="Reminder logo" width="300" height="300">
-    <p><a href="https://conjug.fr" target="blank">Allez plutôt voir conjug.fr !</a></p>
+    <p><a href="{{ url_for('menu') }}">Retourner au menu ↩️</a></p>
 
     </div>
 

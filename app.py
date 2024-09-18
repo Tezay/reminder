@@ -199,7 +199,10 @@ def page_forbidden(e):
     # Rendu d'une page HTML personnalisée
     return render_template('/error_templates/403.html'), 403
 
-
+@app.errorhandler(404)
+def page_not_found(e):
+    # Rendu d'une page HTML personnalisée pour l'erreur 404
+    return render_template('/error_templates/404.html'), 404
 
 
 if __name__ == "__main__":
