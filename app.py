@@ -14,15 +14,9 @@ app.secret_key = FLASK_KEY
 def check_secret_key():
 
     #Vérifie si la sécurité URL est activée
-    if not URL_SECURITY:
-        return
-
-    # On ne vérifie pas les fichiers statiques (CSS, JS, etc.)
-    if request.path.startswith('/static/'):
-        return
-
-    # Si l'utilisateur est déjà authentifié, on ne fait rien
-    if session.get('authenticated'):
+    #Vérifie qu'il ne s'agit pas des fichiers statiques (CSS, JS, etc.)
+    #Vérifie si l'utilisateur est déjà authentifié
+    if not URL_SECURITY or request.path.startswith('/static/') or session.get('authenticated'):
         return
     
     # Récupère la clé dans l'URL
