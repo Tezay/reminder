@@ -41,7 +41,7 @@
 
             <ul class="dataList-container">
 
-                {% for data in dataList %}
+                {% for data in dataList|reverse %}
                 
                 <a href="{{ url_for('info_route', info_id=data[4]) }}">
                     <li class="data-container">

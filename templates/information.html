@@ -32,36 +32,36 @@
 
     <div class="main-container">
 
-        <h1>Information</h1>
+        {% for data in theInfo %}
 
-        {% if theInfo|length == 0 %}
-        <h2>Erreur, aucune information trouvée.</h2>
+            <h1>Information détaillé</h1>
 
-        {% else %}
+            {% if theInfo|length == 0 %}
+            <h2>Erreur, aucune information trouvée.</h2>
 
-        <div class="dataList-container">
+            {% else %}
 
-                {% for data in theInfo %}
+            <div class="dataList-container">
+                    
+                    <div class="data-container">
+                        <div class="data-left">
+                            <span class="span-question">{{ data[0] }}</span>
+                            <span class="span-answer">{{ data[1] }}</span>
+                        </div>
+                        <div class="data-right">
+                            <span>{{ data[3] }}❇️</span>
+                        </div>
+                    </div>
+
+                    <div class="delete-button-container">
+                        <a href="{{url_for('deleteprocessing', info_id=data[4])}}"><div class="delete-button">Supprimer la connaissance 🧹</div></a>
+                    </div>
                 
-                <div class="data-container">
-                    <div class="data-left">
-                        <span class="span-question">{{ data[0] }}</span>
-                        <span class="span-answer">{{ data[1] }}</span>
-                    </div>
-                    <div class="data-right">
-                        <span>{{ data[3] }}❇️</span>
-                    </div>
-                </div>
+            </div>
 
-                <div class="delete-button-container">
-                    <a href="{{url_for('deleteprocessing', info_id=data[4])}}"><div class="delete-button">Supprimer la connaissance 🧹</div></a>
-                </div>
+            {% endif %}
 
-                {% endfor %}
-            
-        </div>
-
-        {% endif %}
+        {% endfor %}
 
     </div>
 

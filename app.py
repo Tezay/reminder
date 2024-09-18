@@ -169,7 +169,6 @@ def info_route(info_id):
                 if row[4] == info_id:
                     # Affecte la ligne au tableau info (row 4 : ID)
                     info.append([row[0], row[1], row[2], row[3], row[4]])
-                    print(info)
                 else:
                     pass
     
