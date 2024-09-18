@@ -8,10 +8,14 @@ body {
 }
 h1 {
     font-size: 4.5em;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 p {
     font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
 }
 a {
     text-decoration: none;
