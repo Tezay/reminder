@@ -1,11 +1,38 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort, session
 import csv
 import os
 from datetime import datetime
 from new import createQuestion
 from review import filter_questions_by_retention, filter_questions_ids, edit_level
+from config import URL_KEY, FLASK_KEY, URL_SECURITY
 
 app = Flask(__name__)
+app.secret_key = FLASK_KEY
+
+
+@app.before_request
+def check_secret_key():
+
+    #Vérifie si la sécurité URL est activée
+    if not URL_SECURITY:
+        return
+
+    # On ne vérifie pas les fichiers statiques (CSS, JS, etc.)
+    if request.path.startswith('/static/'):
+        return
+
+    # Si l'utilisateur est déjà authentifié, on ne fait rien
+    if session.get('authenticated'):
+        return
+    
+    # Récupère la clé dans l'URL
+    key = request.args.get('key')
+    
+    # Si la clé est correcte, on l'enregistre dans la session
+    if key == URL_KEY:
+        session['authenticated'] = True
+    else:
+        abort(403)
 
 
 #Route du menu principal
