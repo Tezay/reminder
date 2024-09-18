@@ -197,5 +197,16 @@ def deleteprocessing(info_id):
 
     return redirect(url_for('menu'))
 
+
+
+# Gestionnaire d'erreur
+@app.errorhandler(403)
+def page_forbidden(e):
+    # Rendu d'une page HTML personnalisée
+    return render_template('/error_templates/403.html'), 403
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
