@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import csv
 from datetime import datetime, timedelta
+from config import RETENTION
 
 delayedData = []
 
@@ -19,24 +20,6 @@ if os.path.exists("data.csv"):
     data = pd.read_csv('data.csv', sep=',', encoding="utf-8")
     # Convertir la colonne 'date' en datetime
     data['date'] = pd.to_datetime(data['date'])
-
-
-
-#Dictionnaire du nombre de jour de rétention de l'information en fonction du level
-retention = {
-    0: 0.3,
-    1: 0.7,
-    2: 2.5,
-    3: 4,
-    4: 7,
-    5: 14,
-    6: 30,
-    7: 60,
-    8: 180,
-    9: 365,
-    
-}
-
 
 def filter_questions_by_retention():
 
@@ -69,10 +52,10 @@ def filter_questions_by_retention():
             # Calculer la différence en jours entre la date actuelle et la date de l'entrée
             days_diff = ((now - row['date']).total_seconds())/86400
             
-            print(days_diff, retention[row['level']])
+            print(days_diff, RETENTION[row['level']])
 
             # Vérifier si la différence en jours est égale au nombre de jours de rétention pour ce niveau
-            if days_diff >= retention[row['level']]:
+            if days_diff >= RETENTION[row['level']]:
 
                 # Ajouter le nouvel ID seulement s'il n'est pas déjà présent
                 if row['id'] not in existing_ids:
